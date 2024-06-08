@@ -44,7 +44,15 @@ def user_input():
     for symbol in operations:
         print(symbol)
     operation_symbol = input("Pick an operation from the line above: ")
-
+    result = operations_execute(num1, num2, operation_symbol)
+    print(f"The result is: {result}")
+    
+    y_or_n = input("Would you like to go again? type 'y' for yes or 'n' for no: ")
+    if y_or_n == "y":
+        user_input()
+    else:
+        print("Goodbye!")
+        
 
 #Execute the selected operation
 def operations_execute(num1, num2, operation_symbol):
@@ -55,6 +63,7 @@ def operations_execute(num1, num2, operation_symbol):
         return "Invalid operation."
     
 
-#Print the result
-result = operations_execute(num1, num2, operation_symbol)
-print(f"The result is: {result}")
+#Main Execution
+if __name__ == "__main__":
+    greet()
+    user_input()
